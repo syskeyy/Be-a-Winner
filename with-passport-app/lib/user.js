@@ -7,8 +7,15 @@ import { v4 as uuidv4 } from "uuid";
  */
 
 const users = [];
+// The database
+const { MongoClient } = require("mongodb");
+//const uri = "mongodb://test:password@127.0.0.1:27017/mydb";
+// Unsecured database
+const uri = "mongodb://127.0.0.1:27017";
+
 
 export async function createUser({ username, password }) {
+  console.log("createUser")
   // Here you should create the user and save the salt and hashed password (some dbs may have
   // authentication methods that will do it for you so you don't have to worry about it):
   const salt = crypto.randomBytes(16).toString("hex");
@@ -18,13 +25,36 @@ export async function createUser({ username, password }) {
   const user = {
     id: uuidv4(),
     createdAt: Date.now(),
-    username,
-    hash,
-    salt,
+    username: username,
+    hash: hash,
+    salt: salt,
   };
 
   // This is an in memory store for users, there is no data persistence without a proper DB
-  users.push(user);
+  // users.push(user);
+  // Replaced with a call to a database
+  
+  const client = new MongoClient(uri);
+  async function run() {
+    try {
+        console.log('Start the database stuff');
+        //Write databse Insert/Update/Query code here..
+        var dbo = client.db("mydb");
+        await dbo.collection("users").insertOne(user, function(err, res) {
+            if (err) {
+                console.log(err); 
+                throw err;
+            }
+        }); 
+        console.log('End the database stuff');
+
+    } finally {
+        // Ensures that the client will close when you finish/error
+        await client.close();
+    }
+  }
+  run().catch(console.dir);
+
 
   return { username, createdAt: Date.now() };
 }
@@ -32,7 +62,40 @@ export async function createUser({ username, password }) {
 // Here you should lookup for the user in your DB
 export async function findUser({ username }) {
   // This is an in memory store for users, there is no data persistence without a proper DB
-  return users.find((user) => user.username === username);
+  // return users.find((user) => user.username === username);
+  const client = new MongoClient(uri);
+  async function run() {
+    try {
+        console.log('Finding a user');
+        //Write databse Insert/Update/Query code here..
+        var dbo = client.db("mydb");
+        
+        let user_db = await dbo.collection("users").findOne({"username": username}, function(err, res) {
+            if (err) {
+                console.log("Didn't find the user")
+                console.log(err); 
+                throw err;
+            }
+        }); 
+        if (!user_db) {
+          console.log("User not found")
+          return false;
+        }
+        else{
+          console.log("User found")
+          return user_db;
+        }
+        console.log('End the database stuff');
+
+    } finally {
+        // Ensures that the client will close when you finish/error
+        await client.close();
+    }
+  }
+  return (run().catch(console.dir));
+
+
+
 }
 
 // Compare the password of an already fetched user (using `findUser`) and compare the
@@ -44,3 +107,4 @@ export function validatePassword(user, inputPassword) {
   const passwordsMatch = user.hash === inputHash;
   return passwordsMatch;
 }
+
