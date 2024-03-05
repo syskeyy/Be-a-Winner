@@ -21,14 +21,14 @@ const Form = ({ isLogin, errorMessage, onSubmit }) => (
       {isLogin ? (
         <>
           <Link href="/signup" legacyBehavior>
-            <a>I don't have an account</a>
+            <a className="noAccount">I don't have an account</a>
           </Link>
           <button type="submit">Login</button>
         </>
       ) : (
         <>
           <Link href="/login" legacyBehavior>
-            <a>I already have an account</a>
+            <a className="noAccount">I already have an account</a>
           </Link>
           <button type="submit">Signup</button>
         </>
@@ -74,6 +74,12 @@ const Form = ({ isLogin, errorMessage, onSubmit }) => (
       .error {
         color: brown;
         margin: 1rem 0 0;
+      }
+      .noAccount {
+        color: white;
+      }
+      .noAccount:hover {
+        color: #ccc;
       }
     `}</style>
   </form>
