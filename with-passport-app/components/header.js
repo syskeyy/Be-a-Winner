@@ -51,14 +51,6 @@ const Header = () => {
         li:first-child {
           margin-left: auto;
         }
-        a {
-          color: #fff;
-          text-decoration: none;
-        }
-        header {
-          color: #fff;
-          background-color: #333;
-        }
       `}</style>
     </header>
   );

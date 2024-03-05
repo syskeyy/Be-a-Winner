@@ -1,0 +1,43 @@
+* {
+    font-family: "Roboto", sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+h1{
+    font-weight: 700;
+    font-size: 50px;
+}
+
+
+body {
+  margin: 0;
+  color: white;
+  background: linear-gradient(rgb(169, 57, 255), rgb(230, 0, 251));
+  height: 100vh;
+
+}
+
+.container {
+  max-width: 42rem;
+  margin: 0 auto;
+  padding: 2rem 1.25rem;
+}
+
+.textNormal{
+    color: rgb(184, 111, 111);
+}
+
+header {
+    color: #fff;
+    background-color: #ffffff20;
+  }
+
+nav a{
+    color: white;
+    text-decoration: none;
+}

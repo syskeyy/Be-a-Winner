@@ -11,7 +11,8 @@ const users = [];
 const { MongoClient } = require("mongodb");
 //const uri = "mongodb://test:password@127.0.0.1:27017/mydb";
 // Unsecured database
-const uri = "mongodb://127.0.0.1:27017";
+// Connecting to my remote database, to locally use, use : const uri = "mongodb://127.0.0.1:27017";
+const uri = "mongodb://192.168.102.129:27017";
 
 
 export async function createUser({ username, password }) {
