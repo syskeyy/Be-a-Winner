@@ -65,11 +65,14 @@ const Form = ({ isLogin, errorMessage, onSubmit }) => (
         padding: 0.5rem 1rem;
         cursor: pointer;
         background: #fff;
-        border: 1px solid #ccc;
+        border: none;
         border-radius: 4px;
+        background-color: rgb(169, 57, 255);
+        color: white;
       }
       .submit > button:hover {
-        border-color: #888;
+        color: rgb(169, 57, 255);
+        background-color: white;
       }
       .error {
         color: brown;

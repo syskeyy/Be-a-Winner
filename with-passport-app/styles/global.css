@@ -1,5 +1,5 @@
 * {
-    font-family: "Roboto", sans-serif;
+    font-family: "Poppins";
 }
 
 *,
@@ -20,7 +20,7 @@ main{
 body {
   margin: 0;
   color: white;
-  background: linear-gradient(rgb(169, 57, 255), rgb(230, 0, 251));
+  background: linear-gradient(rgb(169, 57, 255), rgba(0, 171, 251, 0.551));
   height: 100vh;
 
 }
@@ -36,11 +36,11 @@ body {
 }
 
 header {
-    color: #fff;
-    background-color: #ffffff20;
+    background-color: rgb(255, 255, 255);
+    padding: 5px;
   }
 
 nav a{
-    color: white;
+    color: #252525;
     text-decoration: none;
 }

@@ -1,19 +1,22 @@
 .h1 {
-    background-color: aqua;
+    background-color: rgb(3, 252, 235);
     color: red;
 }
 
 .indexContainer{
     margin-top: 50px;
-    background-color: rgba(255, 255, 255, 0.418);
+    background-color: rgba(11, 0, 7, 0.621);
     width: 100%;
     border: none;
     padding: 20px;
+    color: rgb(255, 255, 255);
+    border: 10px solid rgb(255, 255, 255);
+
 }
 
 .raffleDetails img{
     width: 100%;
-    height: 80%;
+    height: 70%;
     object-fit: cover;
     padding: 0px;
 }
@@ -21,6 +24,12 @@
 .raffleDetails button{
     padding: .5rem 1rem;
     cursor: pointer;
-    background-color: white;
+    color: white;
+    background-color: rgb(169, 57, 255);
     border: none;
+    border-radius: 4px;
+}
+.raffleDetails button:hover{
+    background-color: white;
+    color: rgb(169, 57, 255);
 }

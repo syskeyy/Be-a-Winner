@@ -48,7 +48,7 @@ const Login = () => {
           padding: 1rem;
           border: 1px solid #ccc;
           border-radius: 4px;
-          background-color: #ffffff20;
+          background-color: rgba(11, 0, 7, 0.621);
         }
       `}</style>
     </Layout>

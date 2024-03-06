@@ -21,15 +21,27 @@ const Header = () => {
                 </Link>
               </li>
               <li>
+                <Link href="/raffle" legacyBehavior>
+                  <a>Raffle</a>
+                </Link>
+              </li>
+              <li>
                 <a href="/api/logout">Logout</a>
               </li>
             </>
           ) : (
-            <li>
-              <Link href="/login" legacyBehavior>
-                <a>Login</a>
-              </Link>
-            </li>
+            <>
+              <li>
+                <Link href="/login" legacyBehavior>
+                  <a>Login</a>
+                </Link>
+              </li>
+              <li>
+                <Link href="/raffle" legacyBehavior>
+                  <a>Raffle</a>
+                </Link>
+              </li>
+            </>
           )}
         </ul>
       </nav>
