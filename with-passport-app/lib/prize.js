@@ -1,4 +1,6 @@
 import { v4 as uuidv4 } from "uuid";
+import { useUser } from './hooks';
+import { getLoginSession } from "../lib/auth";
 
 const prize = [];
 const { MongoClient } = require("mongodb");
@@ -57,3 +59,31 @@ export async function getPrizes() {
   
     return prizes;
   }
+
+
+export async function addRaffle(req, id){
+    const client = new MongoClient(uri);
+    
+    try {
+      const session = await getLoginSession(req);
+      const userId = session.id;
+      console.log(userId)
+
+      await client.connect();
+      const database = client.db("mydb");
+      const prizes = database.collection("prizes");
+  
+      const filter = { id: id }; 
+      const updateDocument = {
+        $push: { userId: userId },
+      };
+      
+      const result = await prizes.updateOne(filter, updateDocument);
+      console.log(`${result.matchedCount} document(s) matched the filter, updated ${result.modifiedCount} document(s)`);
+    } catch (error) {
+      console.error("An error occurred while adding the raffle:", error);
+      throw error; 
+    } finally {
+      await client.close();
+    }
+}

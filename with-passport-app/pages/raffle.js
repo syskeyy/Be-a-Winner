@@ -8,6 +8,27 @@ const Raffle = () => {
   console.log('Prizes in Component:', prizes); 
   const user = useUser();
 
+  const enterRaffle = async (id) => {
+    try {
+      const response = await fetch('/api/addRaffle', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ id }),
+      });
+
+      if (!response.ok) {
+        throw new Error('An error occurred while entering the raffle');
+      }
+
+      const data = await response.json();
+      console.log('Raffle entered successfully:', data);
+    } catch (error) {
+      console.error('An error occurred while entering the raffle:', error);
+    }
+  };
+
   return (
     <Layout>
           <form className={styles.prizeForm}>
@@ -26,7 +47,7 @@ const Raffle = () => {
                   <td>{prize.prizeDescription}</td>
                   <td>{prize.maximumEntries}</td>
                   <div className={styles.prizesButtons}>
-                    <button type="submit" className={`${styles.submit} ${styles.enterRaffle}`}>Enter Raffle</button>
+                  <button type="button" className={`${styles.submit} ${styles.enterRaffle}`} onClick={() => enterRaffle(prize.id)}>Enter Raffle</button>                    
                     <button type="submit" className={`${styles.submit} ${styles.drawWinner}`}>Draw Winner</button>
                   </div>
                 </tr>
