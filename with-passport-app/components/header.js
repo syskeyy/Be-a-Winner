@@ -22,12 +22,12 @@ const Header = () => {
               </li>
               <li>
                 <Link href="/raffle" legacyBehavior>
-                  <a>Raffle</a>
+                  <a>Raffles</a>
                 </Link>
               </li>
               <li>
                 <Link href="/addraffle" legacyBehavior>
-                  <a>Add Raffles</a>
+                  <a>Add Prizes</a>
                 </Link>
               </li>
               <li>
@@ -43,7 +43,7 @@ const Header = () => {
               </li>
               <li>
                 <Link href="/raffle" legacyBehavior>
-                  <a>Raffle</a>
+                  <a>Raffles</a>
                 </Link>
               </li>
             </>

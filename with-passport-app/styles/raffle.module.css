@@ -49,3 +49,17 @@
     margin-top: 20px;
     background-color: rgba(11,0,7,.621);
 }
+
+.prizesButtons {
+    display: flex;
+    gap: 10px;
+    justify-content: space-between; 
+  }
+
+.drawWinner{
+    background-color: rgb(4, 198, 139) ;
+}
+
+.drawWinner:hover{
+    color: rgb(4, 198, 139) ;
+}

@@ -10,6 +10,9 @@ export async function createPrize(formData) {
     const prize = {
       id: uuidv4(),
       createdAt: Date.now(),
+      hasWon: false,
+      userId: [],
+      entryId: [],
       ...formData
     };
   
@@ -31,7 +34,7 @@ export async function createPrize(formData) {
     }
     run().catch(console.dir);
   
-    return { ...formData, createdAt: Date.now() };
+    return prize;
   }
 
   

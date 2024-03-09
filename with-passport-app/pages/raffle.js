@@ -10,38 +10,30 @@ const Raffle = () => {
 
   return (
     <Layout>
-    {user ? (
-            <>
-              <form className={styles.raffleForm}>
-                <h2>Enter the Raffle!</h2>
-                <button type="submit" className={styles.submit}>Enter Raffle</button>
-            </form>
-            </>
-          ) : (
-            <>
-            <form className={styles.prizeForm}>
-              <table className={styles.prizesTable}>
-              <thead>
-                <tr className={styles.prizesHeader}>
-                  <th>Raffle Name</th>
-                  <th>Description</th>
-                  <th>Maximum Entries</th>
+          <form className={styles.prizeForm}>
+            <table className={styles.prizesTable}>
+            <thead>
+              <tr className={styles.prizesHeader}>
+                <th>Raffle Name</th>
+                <th>Description</th>
+                <th>Maximum Entries</th>
+              </tr>
+            </thead>
+            <tbody className={styles.prizesBody}>
+              {prizes && prizes.map((prize) => (
+                <tr key={prize.id} className={styles.prizesrow}>
+                  <td>{prize.raffleName}</td>
+                  <td>{prize.prizeDescription}</td>
+                  <td>{prize.maximumEntries}</td>
+                  <div className={styles.prizesButtons}>
+                    <button type="submit" className={`${styles.submit} ${styles.enterRaffle}`}>Enter Raffle</button>
+                    <button type="submit" className={`${styles.submit} ${styles.drawWinner}`}>Draw Winner</button>
+                  </div>
                 </tr>
-              </thead>
-              <tbody className={styles.prizesBody}>
-                {prizes && prizes.map((prize) => (
-                  <tr key={prize.id} className={styles.prizesrow}>
-                    <td>{prize.raffleName}</td>
-                    <td>{prize.prizeDescription}</td>
-                    <td>{prize.maximumEntries}</td>
-                    <button type="submit" className={styles.submit}>Enter Raffle</button>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-            </form>
-            </>
-          )}
+              ))}
+            </tbody>
+          </table>
+          </form>
     </Layout>
   );
 };
