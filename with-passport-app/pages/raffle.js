@@ -1,7 +1,10 @@
 import { useUser } from "../lib/hooks";
 import Layout from "../components/layout";
 import styles from "../styles/raffle.module.css";
+import { usePrizes } from "../lib/hookPrize";
+
 const Raffle = () => {
+  const prizes = usePrizes();
   const user = useUser();
 
   return (
@@ -25,6 +28,9 @@ const Raffle = () => {
 
                 <button type="submit" className={styles.submit}>Enter Raffle</button>
             </form>
+            {prizes.map((prize) => (
+              <div key={prize.id}>{prize.name}</div>
+             ))}
             </>
           )}
     </Layout>
