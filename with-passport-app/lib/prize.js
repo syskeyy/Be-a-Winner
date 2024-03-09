@@ -38,7 +38,7 @@ export async function createPrize(formData) {
 export async function getPrizes() {
     const client = new MongoClient(uri);
     let prizes = [];
-  
+    
     try {
       await client.connect();
       const dbo = client.db("mydb");

@@ -5,6 +5,7 @@ export default async function prizes(req, res) {
   if (req.method === 'GET') {
     try {
       const prizes = await getPrizes();
+      console.log('API Prizes:', prizes); // Add this log
       res.status(200).json(prizes);
     } catch (error) {
       console.error(error);
