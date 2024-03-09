@@ -26,6 +26,11 @@ const Header = () => {
                 </Link>
               </li>
               <li>
+                <Link href="/addraffle" legacyBehavior>
+                  <a>Add Raffles</a>
+                </Link>
+              </li>
+              <li>
                 <a href="/api/logout">Logout</a>
               </li>
             </>

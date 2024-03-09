@@ -8,14 +8,13 @@ const Home = () => {
   return (
     <Layout>
       <h1>🎉 BE A WINNER! 🎉</h1>
-      <p>Be a winner today by entering in the raffle and win awesome prizes! </p>
+      <p>Be a winner today by entering in the raffle to win awesome prizes! </p>
       <div className={styles.indexContainer}>
         <div className={styles.raffleDetails}>
-          <h2>🏖️Ultimate Grand Prize!🏖️</h2>
-          <img src="holiday-img.jpg" alt="Raffle Prize Image"/>
-          <p>Win an all-inclusive free trip to Gran Canaria by entering in the raffle!</p>
-          <p>Draw Date: </p>
-          <h3>December 31, 2024.</h3>
+          <h2>🏖️ULTIMATE GRAND PRIZE!🏖️</h2>
+          <p>Get the chance to win a free holiday package to Mallorca!:</p>
+          <p>Or, try some community submitted prizes by entering in the raffles</p>
+          <h3>Date: December 31, 2024.</h3>
           {user ? (
             <Link href="/raffle">
               <button>Enter Raffle</button>
