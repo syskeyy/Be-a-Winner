@@ -14,13 +14,14 @@ const Home = () => {
           <h2>🏖️ULTIMATE GRAND PRIZE!🏖️</h2>
           <p>Get the chance to win a free holiday package to Mallorca!:</p>
           <p>Or, try some community submitted prizes by entering in the raffles</p>
+          <h3>Coming soon, Draw Date: 25th of Dec, 2024</h3>
           {user ? (
             <Link href="/raffle">
-              <button>Enter Raffle</button>
+              <button>View Raffles</button>
             </Link>
             ) : user === null ? (
               <Link href="/raffle">
-                <button>Enter Raffle</button>
+                <button>View Raffles</button>
               </Link>
             ) : null }
         </div>

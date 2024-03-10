@@ -84,13 +84,14 @@ const Raffle = () => {
           {user ? (
             <>
           <form className={styles.prizeForm}>
-            <h2>Enter the raffles!</h2>
+            <h1>Enter the raffles!</h1>
             <table className={styles.prizesTable}>
             <thead>
               <tr className={styles.prizesHeader}>
                 <th>Raffle Name</th>
                 <th>Description</th>
                 <th>Maximum Entries</th>
+                <th>Winner Id</th>
               </tr>
             </thead>
             <tbody className={styles.prizesBody}>
@@ -99,6 +100,7 @@ const Raffle = () => {
                   <td>{prize.raffleName}</td>
                   <td>{prize.prizeDescription}</td>
                   <td>{prize.maximumEntries}</td>
+                  <td>{prize.winnerId}</td>
                   <div className={styles.prizesButtons}>
                     <button type="button" className={`${styles.submit} ${styles.enterRaffle}`} onClick={() => enterRaffle(prize.id)}>Enter Raffle</button>                    
                     <button type="button" className={`${styles.submit} ${styles.drawWinner}`} onClick={() => drawWinner(prize.id)}>Draw Winner</button>
@@ -112,7 +114,7 @@ const Raffle = () => {
           ) : (
             <>
           <form className={styles.prizeForm}>
-                <h2>Enter the raffles!</h2>
+            <h1>Enter the raffles!</h1>
                 <div className={styles.prizeEmails}>
                   <label htmlFor="name">Enter your email</label>
                   <input type="email" id="email" name="email" required onChange={e => setEmail(e.target.value)}/>
@@ -123,6 +125,7 @@ const Raffle = () => {
                 <th>Raffle Name</th>
                 <th>Description</th>
                 <th>Maximum Entries</th>
+                <th>Winner Id</th>
               </tr>
             </thead>
             <tbody className={styles.prizesBody}>
@@ -131,6 +134,7 @@ const Raffle = () => {
                   <td>{prize.raffleName}</td>
                   <td>{prize.prizeDescription}</td>
                   <td>{prize.maximumEntries}</td>
+                  <td>{prize.winnerId}</td>
                   <div className={styles.prizesButtons}>
                     <button type="button" className={`${styles.submit} ${styles.enterRaffle}`} onClick={() => enterRaffleNoLogin(prize.id, email)}>Enter Raffle</button>                    
                     <button type="button" className={`${styles.submit} ${styles.drawWinner}`} onClick={() => drawWinner(prize.id)}>Draw Winner</button>

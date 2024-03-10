@@ -53,7 +53,6 @@
 .prizesButtons {
     display: flex;
     gap: 10px;
-    padding: 10px;
     justify-content: space-between; 
   }
 
@@ -76,13 +75,30 @@
     background-color: rgba(11, 0, 7, 0.449);
 }
 
-
-.prizeForm tr:hover {
-    background-color: #d30b5ed6;
-}
-
-
 .prizeEmails input{
     border: 1px solid #ccc;
     border-radius: 4px;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+.profileSession {
+    align-items: left;
+    text-align: left;
+    width: 100%;
+    border-collapse: collapse;
+    background-color: rgba(11,0,7,.621);
+  }
+  
+.profileSession td, .profileSession th {
+    border: 1px solid #ffffff98;
+    padding: 8px;
+}
+
+.profileSession tr:hover {
+    background-color: #d30b5ed6;
 }
