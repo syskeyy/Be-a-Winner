@@ -176,3 +176,29 @@ export async function drawWinner (req, id) {
       await client.close();
   }
 }
+
+export async function deleteEntry(req, id){
+  const client = new MongoClient(uri);
+  
+  try {
+    const session = await getLoginSession(req);
+    const userId = session.id;
+
+    await client.connect();
+    const database = client.db("mydb");
+    const prizes = database.collection("prizes");
+
+    const filter = { id: id }; 
+    const updateDocument = {
+      $pull: { userId: userId },
+    };
+    
+    const result = await prizes.updateOne(filter, updateDocument);
+    console.log(`${result.matchedCount} document(s) matched the filter, updated ${result.modifiedCount} document(s)`);
+  } catch (error) {
+    console.error("An error occurred while deleting the entry:", error);
+    throw error; 
+  } finally {
+    await client.close();
+  }
+}

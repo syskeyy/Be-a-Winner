@@ -5,8 +5,8 @@
     margin: 0 auto;
     background-color: rgba(11, 0, 7, 0.621);
     padding: 1rem;
-    border: 1px solid #ccc;
     border-radius: 4px;
+    border: 10px solid rgb(255, 255, 255);
 }
 
 .raffleForm label {

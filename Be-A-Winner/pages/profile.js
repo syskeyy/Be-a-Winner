@@ -3,6 +3,9 @@ import Layout from "../components/layout";
 import { usePrizes } from "../lib/hookPrize";
 import styles from "../styles/profile.module.css";
 
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 const Profile = () => {
   const user = useUser({ redirectTo: "/login" });
   const { prizes } = usePrizes();
@@ -23,6 +26,7 @@ const Profile = () => {
 
       const data = await response.json();
       console.log('Raffle entered successfully:', data);
+      toast.info("You have claimed the prize successfully! 🎉🎉🎉");
     } catch (error) {
       console.error('An error occurred while claiming the prize:', error);
     }
@@ -30,6 +34,7 @@ const Profile = () => {
 
   return (
     <Layout>
+    <ToastContainer />
       <h1>😀Profile😀</h1>
       {user && (
         <>
