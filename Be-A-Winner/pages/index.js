@@ -14,7 +14,6 @@ const Home = () => {
           <h2>🏖️ULTIMATE GRAND PRIZE!🏖️</h2>
           <p>Get the chance to win a free holiday package to Mallorca!:</p>
           <p>Or, try some community submitted prizes by entering in the raffles</p>
-          <h3>Date: December 31, 2024.</h3>
           {user ? (
             <Link href="/raffle">
               <button>Enter Raffle</button>
