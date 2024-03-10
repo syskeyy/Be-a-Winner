@@ -21,7 +21,6 @@
 }
 
 .submit {
-    margin-top: 20px;
     padding: 10px;
     background-color: rgb(169, 57, 255);
     color: white;
@@ -54,7 +53,7 @@
     display: flex;
     gap: 10px;
     padding: 10px;
-    justify-content: space-between; 
+    justify-content: center; 
   }
 
 .drawWinner{
@@ -62,7 +61,15 @@
 }
 
 .drawWinner:hover{
-    color: rgb(4, 198, 139) ;
+    color: rgb(4, 198, 101) ;
+}
+
+.deleteEntry{
+    background-color: rgb(245, 26, 26) ;
+}
+
+.deleteEntry:hover{
+    color: rgb(245, 26, 26) ;
 }
 
 .prizeEmails{
@@ -78,7 +85,7 @@
 
 
 .prizeForm tr:hover {
-    background-color: #d30b5ed6;
+    background-color: #f007c5d6;
 }
 
 

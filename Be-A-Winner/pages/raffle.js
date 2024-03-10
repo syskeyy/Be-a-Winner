@@ -84,7 +84,7 @@ const Raffle = () => {
           {user ? (
             <>
           <form className={styles.prizeForm}>
-            <h1>Enter the raffles!</h1>
+            <h1>🎫Enter the raffles!🎫</h1>
             <table className={styles.prizesTable}>
             <thead>
               <tr className={styles.prizesHeader}>
@@ -104,6 +104,7 @@ const Raffle = () => {
                   <div className={styles.prizesButtons}>
                     <button type="button" className={`${styles.submit} ${styles.enterRaffle}`} onClick={() => enterRaffle(prize.id)}>Enter Raffle</button>                    
                     <button type="button" className={`${styles.submit} ${styles.drawWinner}`} onClick={() => drawWinner(prize.id)}>Draw Winner</button>
+                    <button type="button" className={`${styles.submit} ${styles.deleteEntry}`} onClick={() => drawWinner(prize.id)}>Remove Entries</button>
                   </div>
                 </tr>
               ))}
@@ -114,7 +115,7 @@ const Raffle = () => {
           ) : (
             <>
           <form className={styles.prizeForm}>
-            <h1>Enter the raffles!</h1>
+            <h1>🎫Enter the raffles!🎫</h1>
                 <div className={styles.prizeEmails}>
                   <label htmlFor="name">Enter your email</label>
                   <input type="email" id="email" name="email" required onChange={e => setEmail(e.target.value)}/>

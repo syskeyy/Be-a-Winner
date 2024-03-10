@@ -7,9 +7,30 @@ const Profile = () => {
   const user = useUser({ redirectTo: "/login" });
   const { prizes } = usePrizes();
 
+  const claimPrize = async (id) => {
+    try {
+      const response = await fetch('/api/claimPrize', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ id }),
+      });
+
+      if (!response.ok) {
+        throw new Error('An error occurred while claiming the prize');
+      }
+
+      const data = await response.json();
+      console.log('Raffle entered successfully:', data);
+    } catch (error) {
+      console.error('An error occurred while claiming the prize:', error);
+    }
+  };
+
   return (
     <Layout>
-      <h1>Profile</h1>
+      <h1>😀Profile😀</h1>
       {user && (
         <>
           <h2>Profile session</h2>
@@ -26,14 +47,14 @@ const Profile = () => {
             </table>
           </div>
           <div>
-            <h2>Winnings!</h2>
+            <h2>🏆Winnings!🏆</h2>
             <table className={styles.prizesTable}>
             <thead>
               <tr className={styles.prizesHeader}>
                 <th>Raffle Name</th>
                 <th>Description</th>
-                <th>Maximum Entries</th>
-                <th>Winner Id</th>
+                <th>Winner (you)</th>
+                <th>Claimed</th>
               </tr>
             </thead>
             <tbody className={styles.prizesBody}>
@@ -44,8 +65,9 @@ const Profile = () => {
                   <td>{prize.raffleName}</td>
                   <td>{prize.prizeDescription}</td>
                   <td>{prize.winnerId}</td>
+                  <td>{prize.hasClaimed ? "Yes" : "No"}</td>
                   <div className={styles.prizesButtons}>
-                    <button type="button" className={`${styles.submit} ${styles.enterRaffle}`} onClick={() => enterRaffle(prize.id)}>Claim Raffle</button>                    
+                    <button type="button" className={`${styles.submit} ${styles.enterRaffle}`} onClick={() => claimPrize(prize.id)}>Claim Prize</button>                    
                   </div>
                 </tr>
               ))}

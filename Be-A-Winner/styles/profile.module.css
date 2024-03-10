@@ -21,7 +21,6 @@
 }
 
 .submit {
-    margin-top: 20px;
     padding: 10px;
     background-color: rgb(169, 57, 255);
     color: white;
@@ -75,10 +74,22 @@
     background-color: rgba(11, 0, 7, 0.449);
 }
 
+.prizesButtons {
+    display: flex;
+    gap: 10px;
+    padding: 10px;
+    justify-content: center; 
+  }
+
 .prizeEmails input{
     border: 1px solid #ccc;
     border-radius: 4px;
 }
+
+.prizesTable tr:hover {
+    background-color: #f007c5d6;
+}
+
 
 .container {
     display: flex;
@@ -100,5 +111,5 @@
 }
 
 .profileSession tr:hover {
-    background-color: #d30b5ed6;
+    background-color: #f007c5d6;
 }

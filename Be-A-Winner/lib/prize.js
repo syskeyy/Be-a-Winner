@@ -14,6 +14,7 @@ export async function createPrize(formData) {
       id: uuidv4(),
       createdAt: Date.now(),
       hasWon: false,
+      hasClaimed: false,
       userId: [],
       winnerId: [],
       ...formData
@@ -86,6 +87,30 @@ export async function addRaffle(req, id){
     } finally {
       await client.close();
     }
+}
+
+export async function claimPrize(req, id){
+  const client = new MongoClient(uri);
+  
+  try {
+
+    await client.connect();
+    const database = client.db("mydb");
+    const prizes = database.collection("prizes");
+
+    const filter = { id: id }; 
+    const updateDocument = {
+      $set: { hasClaimed: true },
+    };
+    
+    const result = await prizes.updateOne(filter, updateDocument);
+    console.log(`${result.matchedCount} document(s) matched the filter, updated ${result.modifiedCount} document(s)`);
+  } catch (error) {
+    console.error("An error occurred while claiming prize:", error);
+    throw error; 
+  } finally {
+    await client.close();
+  }
 }
 
 export async function addRaffleNoLogin(req, id, email){
