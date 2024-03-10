@@ -34,20 +34,14 @@
     color: rgb(169, 57, 255);
 }
 
-.form{
-    gap: 0.4rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    
+.prizeForm{
+    border: 10px solid rgb(255, 255, 255);
 }
 
 .prizesTable{
     width: 100%;
     padding: 20px;
     background-color: rgba(11,0,7,.621);
-    border: 10px solid rgb(255, 255, 255);
 }
 
 .prizesButtons {
@@ -81,12 +75,12 @@
     gap: 0.4rem;
     width: 100%;
     padding: 20px;
-    background-color: rgba(11, 0, 7, 0.449);
+    background-color: rgba(139, 0, 255, 0.7);
 }
 
 
 .prizeForm tr:hover {
-    background-color: #f007c5d6;
+    background-color: rgba(11, 0, 7, 0.342);
 }
 
 

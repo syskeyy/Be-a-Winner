@@ -89,7 +89,7 @@
 }
 
 .prizesTable tr:hover {
-    background-color: #f007c5d6;
+    background-color: rgba(11, 0, 7, 0.342);
 }
 
 
@@ -114,5 +114,5 @@
 }
 
 .profileSession tr:hover {
-    background-color: #f007c5d6;
+    background-color: rgba(11, 0, 7, 0.342);
 }

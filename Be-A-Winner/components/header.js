@@ -31,6 +31,11 @@ const Header = () => {
                 </Link>
               </li>
               <li>
+                <Link href="/luckynumber" legacyBehavior>
+                  <a>Lucky Numbers</a>
+                </Link>
+              </li>
+              <li>
                 <a href="/api/logout">Logout</a>
               </li>
             </>
@@ -44,6 +49,11 @@ const Header = () => {
               <li>
                 <Link href="/raffle" legacyBehavior>
                   <a>Raffles</a>
+                </Link>
+              </li>
+              <li>
+                <Link href="/luckynumber" legacyBehavior>
+                  <a>Lucky Numbers</a>
                 </Link>
               </li>
             </>

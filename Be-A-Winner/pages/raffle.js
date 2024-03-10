@@ -110,15 +110,14 @@ const Raffle = () => {
       <ToastContainer />
 
           {user ? (
-            <>
+            <>            
+          <h1>🎫Enter the raffles!🎫</h1>
           <form className={styles.prizeForm}>
-            <h1>🎫Enter the raffles!🎫</h1>
             <table className={styles.prizesTable}>
             <thead>
               <tr className={styles.prizesHeader}>
                 <th>Raffle Name</th>
                 <th>Description</th>
-                <th>Maximum Entries</th>
                 <th>Winner Id</th>
               </tr>
             </thead>
@@ -127,7 +126,6 @@ const Raffle = () => {
                 <tr key={prize.id} className={styles.prizesrow}>
                   <td>{prize.raffleName}</td>
                   <td>{prize.prizeDescription}</td>
-                  <td>{prize.maximumEntries}</td>
                   <td>{prize.winnerId}</td>
                   <div className={styles.prizesButtons}>
                     <button type="button" className={`${styles.submit} ${styles.enterRaffle}`} onClick={() => enterRaffle(prize.id)}>Enter Raffle</button>                    
@@ -142,18 +140,17 @@ const Raffle = () => {
           </>
           ) : (
             <>
-          <form className={styles.prizeForm}>
-            <h1>🎫Enter the raffles!🎫</h1>
+          <h1>🎫Enter the raffles!🎫</h1>
+             <form className={styles.prizeForm}>
                 <div className={styles.prizeEmails}>
-                  <label htmlFor="name">Enter your email</label>
-                  <input type="email" id="email" name="email" required onChange={e => setEmail(e.target.value)}/>
+                  <label htmlFor="name">*Enter E-mail* before submitting!</label>
+                  <input type="email" id="email" name="email" placeholder="john@gmail.com" required onChange={e => setEmail(e.target.value)}/>
                 </div>
             <table className={styles.prizesTable}>
             <thead>
               <tr className={styles.prizesHeader}>
                 <th>Raffle Name</th>
                 <th>Description</th>
-                <th>Maximum Entries</th>
                 <th>Winner Id</th>
               </tr>
             </thead>
@@ -162,7 +159,6 @@ const Raffle = () => {
                 <tr key={prize.id} className={styles.prizesrow}>
                   <td>{prize.raffleName}</td>
                   <td>{prize.prizeDescription}</td>
-                  <td>{prize.maximumEntries}</td>
                   <td>{prize.winnerId}</td>
                   <div className={styles.prizesButtons}>
                     <button type="button" className={`${styles.submit} ${styles.enterRaffle}`} onClick={() => enterRaffleNoLogin(prize.id, email)}>Enter Raffle</button>                    

@@ -81,15 +81,6 @@ const Profile = () => {
           </div>
         </>
       )}
-      <style jsx>{`
-        pre {
-          white-space: pre-wrap;
-          word-wrap: break-word;
-          background-color: rgba(11, 0, 7, 0.621);
-          padding: 20px;
-
-        }
-      `}</style>
     </Layout>
   );
 };

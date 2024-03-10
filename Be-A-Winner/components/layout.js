@@ -5,6 +5,7 @@ const Layout = (props) => (
   <>
     <Head>
       <title>Be a winner!</title>
+      <link rel="icon" href="/favicon.png" />
     </Head>
 
     <Header />

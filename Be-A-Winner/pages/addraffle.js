@@ -16,7 +16,6 @@ const AddRaffle = () => {
       const body = {
         raffleName: e.currentTarget.raffleName.value,
         prizeDescription: e.currentTarget.prizeDescription.value,
-        maximumEntries: e.currentTarget.maximumEntries.value,
       };
   
       try {
@@ -47,9 +46,6 @@ const AddRaffle = () => {
 
                 <label htmlFor="name">Prize Description</label>
                 <textarea  type="text" id="prizeDescription" name="name" required />
-
-                <label htmlFor="name">Maximum Entries</label>
-                <input type="number" id="maximumEntries" name="name" required />
 
                 <button type="submit" className={styles.submit}>Add Prize</button>
             </form>
