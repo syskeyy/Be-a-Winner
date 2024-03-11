@@ -51,18 +51,12 @@ const Header = () => {
                   <a>Raffles</a>
                 </Link>
               </li>
-              <li>
-                <Link href="/luckynumber" legacyBehavior>
-                  <a>Lucky Numbers</a>
-                </Link>
-              </li>
             </>
           )}
         </ul>
       </nav>
       <style jsx>{`
         nav {
-          max-width: 42rem;
           margin: 0 auto;
           padding: 0.2rem 1.25rem;
         }
@@ -73,7 +67,7 @@ const Header = () => {
           padding-left: 0;
         }
         li {
-          margin-right: 1rem;
+          margin-right: 1.5rem;
         }
         li:first-child {
           margin-left: auto;

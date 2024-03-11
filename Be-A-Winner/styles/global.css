@@ -20,8 +20,11 @@ body {
   margin: 0;
   color: white;
   background: linear-gradient(rgb(169, 57, 255), rgba(0, 171, 251, 0.551));
-  height: 100vh;
+  height:100%;
+}
 
+html {
+  min-height:100%;
 }
 
 .container {
