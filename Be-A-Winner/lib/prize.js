@@ -3,6 +3,7 @@ import { useUser } from './hooks';
 import { getLoginSession } from "../lib/auth";
 import util from 'util';
 
+// creates a prizes collection in the database
 const prize = [];
 const { MongoClient } = require("mongodb");
 const uri = "mongodb://192.168.102.129:27017";
@@ -41,7 +42,7 @@ export async function createPrize(formData) {
     return prize;
   }
 
-  
+  // this function is used to get the prizes from the database
 export async function getPrizes() {
     const client = new MongoClient(uri);
     let prizes = [];
@@ -62,7 +63,8 @@ export async function getPrizes() {
     return prizes;
   }
 
-
+// this function is used to add a user to the the prize (aka add raffle)
+// used my honours project logic, and chatGPT to filter prize by id
 export async function addRaffle(req, id){
     const client = new MongoClient(uri);
     
@@ -89,6 +91,8 @@ export async function addRaffle(req, id){
     }
 }
 
+// this function is used to claim the prize (change bool to true)
+
 export async function claimPrize(req, id){
   const client = new MongoClient(uri);
   
@@ -112,6 +116,8 @@ export async function claimPrize(req, id){
     await client.close();
   }
 }
+
+// this function handles adding a user to the the prize (aka add raffle) without logging in
 
 export async function addRaffleNoLogin(req, id, email){
   const client = new MongoClient(uri);
@@ -138,6 +144,8 @@ export async function addRaffleNoLogin(req, id, email){
   }
 }
 
+// this function is used to draw the winner of the prize
+// Used chatGPT to generate the random draw
 export async function drawWinner (req, id) {
   const client = new MongoClient(uri);
   
@@ -177,6 +185,8 @@ export async function drawWinner (req, id) {
   }
 }
 
+//Used chatGPT to delete the entry ($pull)
+// Want to mention that it will only delete the userId entries, and not the winnerId.
 export async function deleteEntry(req, id){
   const client = new MongoClient(uri);
   

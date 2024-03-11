@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Header from "./header";
 
+// Layout component, also put a favicon in there
 const Layout = (props) => (
   <>
     <Head>

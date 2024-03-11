@@ -1,5 +1,6 @@
 import Link from "next/link";
 
+// This is the form component that will be used for both the login and signup pages
 const Form = ({ isLogin, errorMessage, onSubmit }) => (
   <form onSubmit={onSubmit}>
     <label>

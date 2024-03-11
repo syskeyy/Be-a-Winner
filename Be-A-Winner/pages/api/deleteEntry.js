@@ -1,3 +1,4 @@
+// api endpoint to delete entry, grabs prize id from body
 import { deleteEntry } from '../../lib/prize';
 
 export default async function handler(req, res) {

@@ -1,3 +1,4 @@
+// api endpoint to claim prize, grabs prize id from the request body
 import { claimPrize } from '../../lib/prize';
 
 export default async function handler(req, res) {

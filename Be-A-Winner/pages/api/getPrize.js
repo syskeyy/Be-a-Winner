@@ -1,4 +1,4 @@
-// /api/prizes.js
+// api endpoint that gets prizes from database
 import { getPrizes } from "../../lib/prize";
 
 export default async function prizes(req, res) {

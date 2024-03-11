@@ -1,3 +1,4 @@
+// api endpoint that grabs user info from the request body
 import { getLoginSession } from "../../lib/auth";
 import { findUser } from "../../lib/user";
 

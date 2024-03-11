@@ -1,7 +1,7 @@
 import { getLoginSession } from "../lib/auth";
 import { v4 as uuidv4 } from "uuid";
 
-
+// Lucky numbers essentially functions the same as the prize.js file, but with different data
 const luckyNumbers = [];
 const { MongoClient } = require("mongodb");
 const uri = "mongodb://192.168.102.129:27017";
@@ -39,6 +39,7 @@ export async function luckyWinner(req, selectedNumber) {
     return luckyNumbers;
   }
 
+  // This function is used to get the lucky numbers from the database
 export async function getLuckyNumbers() {
     const client = new MongoClient(uri);
     let luckyNumbers = [];
@@ -59,6 +60,7 @@ export async function getLuckyNumbers() {
     return luckyNumbers;
   }
 
+  // This function is used to claim the prize (change bool to true)
   export async function claimLuckyNumber(req, id){
     const client = new MongoClient(uri);
     

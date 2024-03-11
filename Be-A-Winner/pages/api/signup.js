@@ -1,3 +1,4 @@
+// api endpoint that creates a new user in the database
 import { createUser } from "../../lib/user";
 
 export default async function signup(req, res) {

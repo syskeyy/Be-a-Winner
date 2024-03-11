@@ -4,6 +4,7 @@ import { useUser } from "../lib/hooks";
 import Layout from "../components/layout";
 import Form from "../components/form";
 
+// handles the form submission of the login page, will grab username and password etc..
 const Login = () => {
   useUser({ redirectTo: "/", redirectIfFound: true });
 

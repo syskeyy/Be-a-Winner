@@ -1,3 +1,5 @@
+ // api endpoint to add lucky winner, also grabs selectedNumber from the request body
+  
 import { luckyWinner } from '../../lib/luckynumbers';
 
 export default async function handler(req, res) {

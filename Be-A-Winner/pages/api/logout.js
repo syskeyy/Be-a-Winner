@@ -1,3 +1,4 @@
+// removes user from session and logs out
 import { removeTokenCookie } from "../../lib/auth-cookies";
 
 export default async function logout(req, res) {

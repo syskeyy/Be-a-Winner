@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { useUser } from "../lib/hooks";
 
+// This is the header (navbar) component, some links are conditional
 const Header = () => {
   const user = useUser();
 

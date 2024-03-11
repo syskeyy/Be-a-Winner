@@ -5,6 +5,7 @@ import styles from "../styles/index.module.css";
 const Home = () => {
   const user = useUser();
 
+  // home page, I wanted to orginally do something with conditinally rendering but left it as is, this is just a simple home page showing the grand prize
   return (
     <Layout>
       <h1>🎉 BE A WINNER! 🎉</h1>

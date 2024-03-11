@@ -4,6 +4,7 @@ import { useUser } from "../lib/hooks";
 import Layout from "../components/layout";
 import Form from "../components/form";
 
+// handles the form submission of the signup page, will grab username and password etc
 const Signup = () => {
   useUser({ redirectTo: "/", redirectIfFound: true });
 

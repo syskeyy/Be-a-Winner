@@ -3,16 +3,19 @@ import Link from "next/link";
 import Layout from "../components/layout";
 import styles from "../styles/luckynumber.module.css";
 import { useState } from 'react';
-
+// importing toast for notifications, this just gives the user a bit of feedback
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
+//used help from ChatGPT for the random drawing logic & state, setting states for the selected number and the results
 const LuckyNumber = () => {
     const user = useUser({ redirectTo: "/login" });
     const [selectedNumber, setSelectedNumber] = useState("");
     let [results, setResults] = useState("");
 
 
+    // function to draw the results, if the selected number is the same as the random number, the user wins and gets sent to the api endpoint to add to database, if not, they lose
+    // uses setresult to update the state of the results which gets displayed on screen
 const DrawResults = async(selectedNumber) => {
     console.log("Selected Number: ", selectedNumber);
     const randomNumber = Math.floor(Math.random() * 10) + 1;
@@ -41,6 +44,7 @@ const DrawResults = async(selectedNumber) => {
         toast.info("You lose! 😢");
     }
 }
+// this is just the place where the user selects a num 1-10 and submits it, the results are displayed below
   return (
     <Layout>
         <ToastContainer />

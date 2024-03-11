@@ -1,3 +1,5 @@
+// I set this page up by following guide on how to set up global styles, aswell as setting up font:  https://www.youtube.com/watch?v=Bd_CorhPq_M 
+
 import '../styles/global.css';
 import Head from 'next/head';
 

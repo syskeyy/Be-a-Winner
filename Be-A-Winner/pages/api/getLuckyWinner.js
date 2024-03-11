@@ -1,4 +1,4 @@
-
+// api endpoint that gets lucky numbers from db
 import { getLuckyNumbers } from "../../lib/luckynumbers";
 
 export default async function luckyNumbers(req, res) {

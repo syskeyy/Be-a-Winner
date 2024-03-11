@@ -1,3 +1,5 @@
+// api endpoint to add a winner, grabs prize id from the request body
+
 import { drawWinner } from "../../lib/prize";
 
 export default async function handler(req, res) {

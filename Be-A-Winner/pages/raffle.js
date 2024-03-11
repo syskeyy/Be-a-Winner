@@ -3,17 +3,18 @@ import Layout from "../components/layout";
 import styles from "../styles/raffle.module.css";
 import { usePrizes } from "../lib/hookPrize";
 import { useState } from 'react';
-
+// using toastify
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
+// use prizes to show prizes, use user to use user data
+// added email states to handle the email input
 const Raffle = () => {
   const { prizes, isLoading, isError } = usePrizes();
   const [email, setEmail] = useState('');
-
-  console.log('Prizes in Component:', prizes); 
   const user = useUser();
 
+  // handles the form submission and adds a new raffle prize, it will grab the id of raffle to body and send it to the server
   const enterRaffle = async (id) => {
     try {
       const response = await fetch('/api/addRaffle', {
@@ -35,6 +36,8 @@ const Raffle = () => {
     }
   };
 
+  // handles the form submission and adds a new raffle prize, it will grab email, and raffle id to body and send it to the server of users with no login
+  // theres also a check to see if email is blank, if it is, it wont work
   const enterRaffleNoLogin = async (id, email) => {
     if (!email) {
       console.log('Email is required to enter the raffle');
@@ -62,6 +65,7 @@ const Raffle = () => {
     }
   };
 
+  // handles the form submission of draw winner, it will grab the raffle id to body and send it to the server
   const drawWinner = async (id) => {
     try {
       const response = await fetch('/api/addWinner', {
@@ -82,7 +86,7 @@ const Raffle = () => {
       console.error('An error occurred while entering winner:', error);
     }
   };
-
+  // handles the form submission of delete entry, it will grab the raffle id to body and send it to the server
   const deleteEntry = async (id) => {
     try {
       const response = await fetch('/api/deleteEntry', {
@@ -104,7 +108,7 @@ const Raffle = () => {
       console.error('An error occurred while deleting entry:', error);
     }
   };
-
+  // If user is logged in, it will show not show email box, otherwise it will show the email box for users with no login to enter the raffle, if email is submitted blank, it wont work 
   return (
     <Layout>
       <ToastContainer />

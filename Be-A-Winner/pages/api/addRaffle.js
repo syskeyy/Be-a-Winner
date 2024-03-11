@@ -1,3 +1,4 @@
+// api endpoint to add raffle, also grabs prize id from the request body
 import { addRaffle } from '../../lib/prize';
 
 export default async function handler(req, res) {

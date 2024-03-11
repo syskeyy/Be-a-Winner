@@ -1,18 +1,16 @@
-import { useState } from "react";
 import Router from "next/router";
 import { useUser } from "../lib/hooks";
 import Layout from "../components/layout";
 import styles from "../styles/addraffle.module.css";
 
+// handles the form submission and adds a new raffle prize, it will grab the rafflename and description to body and send it to the server
+// I reused some of the code from the login.js file
 const AddRaffle = () => {
     const user = useUser({ redirectTo: "/login", redirectIfFound: false });
-    const [errorMsg, setErrorMsg] = useState("");
   
     const handleSubmit = async (e) => {
         e.preventDefault();
-  
-      if (errorMsg) setErrorMsg("");
-  
+    
       const body = {
         raffleName: e.currentTarget.raffleName.value,
         prizeDescription: e.currentTarget.prizeDescription.value,
@@ -31,10 +29,10 @@ const AddRaffle = () => {
         }
       } catch (error) {
         console.error("An unexpected error happened occurred:", error);
-        setErrorMsg(error.message);
       }
     }
 
+    // if user is logged in, they can submit a raffle prize, otherwise they will be prompted to login
   return (
     <Layout>
     {user ? (

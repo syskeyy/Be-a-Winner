@@ -4,15 +4,17 @@ import { usePrizes } from "../lib/hookPrize";
 import { useLuckyWinner } from "../lib/hookLuckyNumber";
 
 import styles from "../styles/profile.module.css";
-
+// using toastify for the toast messages
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
+// Grabbing usePrizes and useLuckyWinner data to show onscreen to the user of their winnings
 const Profile = () => {
   const user = useUser({ redirectTo: "/login" });
   const { prizes } = usePrizes();
   const { luckyNumbers } = useLuckyWinner();
 
+  // claimPrize handler to claim prize which sets bool to true in the database
   const claimPrize = async (id) => {
     try {
       const response = await fetch('/api/claimPrize', {
@@ -35,6 +37,8 @@ const Profile = () => {
     }
   };
 
+  // claim luckynumbers handler to claim lucky numbers which sets bool to true in the database
+
   const claimLucky = async (id) => {
     try {
       const response = await fetch('/api/claimLuckyNumber', {
@@ -56,6 +60,10 @@ const Profile = () => {
       console.error('An error occurred while claiming the prize:', error);
     }
   };
+
+  // I neated up the profile session information by adding it to a table, i kept this in as I thought it would be useful for user to know, i used chatGPT to help me with this
+ // using the map function to display raffles and lucky numbers, but I also filtered it so that it compares winner ids to the user id to see if they won
+ // lastly there is an onsubmit thta handles the claim prize and claim lucky number
   return (
     <Layout>
     <ToastContainer />

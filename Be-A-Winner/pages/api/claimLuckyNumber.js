@@ -1,3 +1,4 @@
+// api endpoint to claim lucky number, grabs luckynumber id from the request body
 import { claimLuckyNumber } from '../../lib/luckynumbers';
 
 export default async function handler(req, res) {

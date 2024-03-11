@@ -1,3 +1,4 @@
+// api endpoint to add raffle without login, also grabs prize id and user email from the request body
 import { addRaffleNoLogin } from '../../lib/prize';
 
 export default async function handler(req, res) {
