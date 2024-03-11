@@ -6,7 +6,7 @@ Instructions to setup:
 - git clone https://github.com/syskeyy/Web_Systems.git
 - cd Web_Systems/
 - cd Be-A-Winner/
-- Run Bash Script
+- Run Bash Script (./script.sh)
 
 Upgrading to NodeJS version 21 has not worked for me in the past, I have included the command that fixes this, (removed libnode-dev)
 Bash Script contains the following commands:
@@ -38,5 +38,5 @@ Create a new directory for the database then run the following commands:
 - sudo systemctl start mongod
 - mongosh
 
-Then go back to Be-A-Winner directory, and run script again
+Then go back to Be-A-Winner directory, and run script again (./script.sh)
 
