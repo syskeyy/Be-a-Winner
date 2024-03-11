@@ -36,5 +36,6 @@ Create a new directory for the database then run the following commands:
 - sudo apt-get install -y mongodb-org
 - sudo systemctl enable mongod
 - sudo systemctl start mongod
-- mongosh 
+- mongosh
+Then go back to Be-A-Winner directory, and run script again
 
