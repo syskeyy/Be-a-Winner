@@ -12,23 +12,8 @@ Instructions to setup:
 Upgrading to NodeJS version 21 has not worked for me in the past, I have included the command that fixes this, (removed libnode-dev)
 Bash Script contains the following commands:
 
-- sudo dpkg --remove --force-remove-reinstreq libnode-dev
-- sudo apt install nodejs npm
-- sudo apt install curl
-- curl -fsSL https://deb.nodesource.com/setup_21.x | sudo -E bash 
-- sudo apt-get install -y nodejs 
-- npm install
-- npm run dev
-
-You can use the following users if you'd like (username:password):
-- test:test
-- test1:test1
-- test2:test2
-
-In the event that the mongoDB server does not connect, you can do the following changes:
-- In user.js, prize.js, luckynumbers.js change the URI value to mongodb://127.0.0.1:27017.
-Create a new directory for the database then run the following commands:
-- sudo apt-get install gnupg curl
+- mkdir Database
+- - sudo apt-get install gnupg curl
 - curl -fsSL https://www.mongodb.org/static/pgp/server-7.0.asc | \
    sudo gpg -o /usr/share/keyrings/mongodb-server-7.0.gpg \
    --dearmor
@@ -39,5 +24,11 @@ Create a new directory for the database then run the following commands:
 - sudo systemctl start mongod
 - mongosh
 
-Then go back to Be-A-Winner directory, and run script again (./script.sh)
+- sudo dpkg --remove --force-remove-reinstreq libnode-dev
+- sudo apt install nodejs npm
+- sudo apt install curl
+- curl -fsSL https://deb.nodesource.com/setup_21.x | sudo -E bash 
+- sudo apt-get install -y nodejs 
+- npm install
+- npm run dev
 
