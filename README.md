@@ -23,7 +23,7 @@ Bash Script contains the following commands:
 - sudo systemctl enable mongod
 - sudo systemctl start mongod
 - mongosh
-
+- tmux
 - sudo dpkg --remove --force-remove-reinstreq libnode-dev
 - sudo apt install nodejs npm
 - sudo apt install curl
