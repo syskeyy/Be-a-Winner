@@ -13,6 +13,7 @@ Upgrading to NodeJS version 21 has not worked for me in the past, I have include
 Bash Script contains the following commands:
 
 - mkdir Database
+- cd Database
 - sudo apt-get install gnupg curl
 - curl -fsSL https://www.mongodb.org/static/pgp/server-7.0.asc | \
    sudo gpg -o /usr/share/keyrings/mongodb-server-7.0.gpg \
@@ -23,6 +24,7 @@ Bash Script contains the following commands:
 - sudo systemctl enable mongod
 - sudo systemctl start mongod
 - mongosh
+- sudo apt-get install tmux- tmux
 - tmux
 - sudo dpkg --remove --force-remove-reinstreq libnode-dev
 - sudo apt install nodejs npm
