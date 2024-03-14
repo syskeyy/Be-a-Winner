@@ -23,9 +23,7 @@ Bash Script contains the following commands:
 - sudo apt-get install -y mongodb-org
 - sudo systemctl enable mongod
 - sudo systemctl start mongod
-- mongosh
-- sudo apt-get install tmux- tmux
-- tmux
+- cd ..
 - sudo dpkg --remove --force-remove-reinstreq libnode-dev
 - sudo apt install nodejs npm
 - sudo apt install curl
