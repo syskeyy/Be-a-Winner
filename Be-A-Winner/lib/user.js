@@ -9,11 +9,9 @@ import { v4 as uuidv4 } from "uuid";
 const users = [];
 // The database
 const { MongoClient } = require("mongodb");
-//const uri = "mongodb://test:password@127.0.0.1:27017/mydb";
-// Unsecured database
-// Connecting to my remote database, to locally use, use : const uri = "mongodb://127.0.0.1:27017";
-const uri = "mongodb://127.0.0.1:27017";
 
+// Connecting to local host
+const uri = "mongodb://127.0.0.1:27017";
 
 export async function createUser({ username, password }) {
   console.log("createUser")
