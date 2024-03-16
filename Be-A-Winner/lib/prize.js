@@ -65,7 +65,7 @@ export async function getPrizes() {
   }
 
 // this function is used to add a user to the the prize (aka add raffle)
-// used my honours project logic, and chatGPT to filter prize by id
+// used chatGPT to filter prize by id
 export async function addRaffle(req, id){
     const client = new MongoClient(uri);
     
