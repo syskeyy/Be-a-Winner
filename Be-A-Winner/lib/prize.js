@@ -4,9 +4,10 @@ import { getLoginSession } from "../lib/auth";
 import util from 'util';
 
 // creates a prizes collection in the database
+// This URI gets called alot of times, this connects to the mongoDB server, its not great thats its hardcoded but will do for now
 const prize = [];
 const { MongoClient } = require("mongodb");
-const uri = "mongodb://192.168.102.129:27017";
+const uri = "mongodb://127.0.0.1:27017";
 
 export async function createPrize(formData) {
     console.log("createPrize");

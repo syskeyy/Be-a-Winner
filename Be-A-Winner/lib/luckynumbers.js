@@ -4,7 +4,7 @@ import { v4 as uuidv4 } from "uuid";
 // Lucky numbers essentially functions the same as the prize.js file, but with different data
 const luckyNumbers = [];
 const { MongoClient } = require("mongodb");
-const uri = "mongodb://192.168.102.129:27017";
+const uri = "mongodb://127.0.0.1:27017";
 
 export async function luckyWinner(req, selectedNumber) {
     console.log("luckyWinner");
