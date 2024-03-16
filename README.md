@@ -9,8 +9,7 @@ Instructions to setup:
 - sudo chmod 777 script.sh
 - Run Bash Script: ./script.sh
 
-Upgrading to NodeJS version 21 has not worked for me in the past, I have included the command that fixes this, (removed libnode-dev)
-Bash Script contains the following commands:
+Upgrading to NodeJS version 21 has not worked for me in the past, I have included the command that fixes this, (removed libnode-dev). Bash Script contains the following commands:
 
 - mkdir Database
 - cd Database
