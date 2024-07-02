@@ -1,4 +1,4 @@
-# Web_Systems
+# Be a Winner!
 
 This is a React web application using a local MongoDB server
 Be a winner! - Coursework
