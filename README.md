@@ -1,7 +1,9 @@
 # Web_Systems
+
+This is a React web application using a local MongoDB server
 Be a winner! - Coursework
 
-Instructions to setup:
+Instructions to setup on Linux (Debian based instructions):
 - sudo apt-get install git-all
 - git clone https://github.com/syskeyy/Web_Systems.git
 - cd Web_Systems/
